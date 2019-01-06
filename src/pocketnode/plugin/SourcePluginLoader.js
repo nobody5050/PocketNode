@@ -10,7 +10,7 @@ class SourcePluginLoader extends PluginLoader {
         super();
         this.server = server;
     }
-
+// loads plugin file
     loadPlugin(file){
         if(FileSystem.lstatSync(file).isDirectory() && FileSystem.existsSync(file + "/manifest.json") && FileSystem.existsSync(file + "/src/")){
             let manifest;
@@ -44,7 +44,7 @@ class SourcePluginLoader extends PluginLoader {
 
         return null;
     }
-
+//loads plugin manifest
     getPluginManifest(file){
         if(FileSystem.lstatSync(file).isDirectory() && FileSystem.existsSync(file + "/manifest.json")){
             let data = FileSystem.readFileSync(file + "/manifest.json", {encoding: "utf-8"});
@@ -62,7 +62,7 @@ class SourcePluginLoader extends PluginLoader {
         plugin.init(this, this.server, manifest, dataFolder, file);
         plugin.onLoad();
     }
-
+//enable plugin
     enablePlugin(plugin){
         if(plugin instanceof PluginBase && !plugin.isEnabled()){
             this.server.getLogger().info("Enabling " + plugin.getFullName());
@@ -72,7 +72,7 @@ class SourcePluginLoader extends PluginLoader {
             //todo: event stuff: call PluginEnableEvent
         }
     }
-
+//disable plugin :(
     disablePlugin(plugin){
         if(plugin instanceof PluginBase && plugin.isEnabled()){
             this.server.getLogger().info("Disabling " + plugin.getFullName());
