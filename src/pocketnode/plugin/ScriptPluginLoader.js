@@ -10,7 +10,7 @@ class ScriptPluginLoader extends PluginLoader {
         super();
         this.server = server;
     }
-
+//loads plugins 
     loadPlugin(file){
         let manifest;
         if((manifest = this.getPluginManifest(file)) instanceof PluginManifest){
@@ -36,7 +36,7 @@ class ScriptPluginLoader extends PluginLoader {
 
         return null;
     }
-
+// gets manifest
     getPluginManifest(file){
         let plugin = require(file);
         if(typeof plugin.manifest !== "undefined"){
@@ -58,7 +58,7 @@ class ScriptPluginLoader extends PluginLoader {
         plugin.init(this, this.server, manifest, dataFolder, file);
         plugin.onLoad();
     }
-
+// enable plugins
     enablePlugin(plugin){
         if(plugin instanceof PluginBase && !plugin.isEnabled()){
             this.server.getLogger().info("Enabling " + plugin.getFullName());
