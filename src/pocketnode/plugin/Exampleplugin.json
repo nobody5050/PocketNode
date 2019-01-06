@@ -1,0 +1,16 @@
+{
+    "name": "ExamplePlugin",
+    "main": "ExamplePlugin/Main.js",
+    "version": "1.0.0",
+    "api": "1.0.0",
+    "author": "nobody5050",
+    "description": "PocketNode example plugin, this is the example manifest description",
+
+    "commands": {
+        "examplecommand": {
+            "description": "a example command for ExamplePlugin",
+            "permission": "testplugin.command.testcommand",
+            "aliases": ["ep", "example"]
+        }
+    }
+}
