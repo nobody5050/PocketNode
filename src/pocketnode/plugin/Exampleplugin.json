@@ -1,6 +1,6 @@
 {
     "name": "ExamplePlugin",
-    "main": "ExamplePlugin/Main.js",
+    "main": "ExamplePlugin",
     "version": "1.0.0",
     "api": "1.0.0",
     "author": "nobody5050",
@@ -9,7 +9,7 @@
     "commands": {
         "examplecommand": {
             "description": "a example command for ExamplePlugin",
-            "permission": "testplugin.command.testcommand",
+            "permission": "exampleplugin.command.examplecommand",
             "aliases": ["ep", "example"]
         }
     }
